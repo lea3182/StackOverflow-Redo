@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @question = Question.new
   end
 
   def new
@@ -19,7 +20,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answer = Answer.where(question_id: params[:id])
+    @answers = Answer.where(question_id: params[:id])
+    @answer = Answer.new
   end
 
   def edit

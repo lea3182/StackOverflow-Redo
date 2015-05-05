@@ -3,10 +3,18 @@
 <p><%= @question.content %></p>
 
 <div>
-  <% @answer.each do |answer| %>
+  <% @answers.each do |answer| %>
     <%= answer.title %> :
     <%= answer.content %><br>
   <% end %>
+</div><br>
+
+<div>
+  <%= form_for [@question, @answer] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <%= f.submit "Submit an answer" %>
+  <% end %>
 </div>
-
-
