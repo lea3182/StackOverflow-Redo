@@ -1,7 +1,7 @@
 <h2>Questions:</h2>
 <% @questions.each do |question| %>
   <ul>
-    <li><%= question.title %></li>
+    <li><a href="/questions/<%= question.id %>"><%= question.title %></a> </li>
   </ul>
 <% end %>
 
@@ -12,3 +12,6 @@
   <%= f.text_field :content %>
   <%= f.submit %>
 <% end %>
+
+
+

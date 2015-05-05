@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
                          question_id: @question.id)
 
     # if @answer.save
-      redirect_to question_path(@question) #@question works too
+      redirect_to question_path(@question) #@question works tor
     # else
     #   redirect_to answers_path
     # end
