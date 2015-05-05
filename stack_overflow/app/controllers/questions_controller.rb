@@ -8,6 +8,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new(title: params[:question][:title],
+                             content: params[:question][:content])
+
+    if @question.save
+      redirect_to root_path
+    end
+
   end
 
   def show
