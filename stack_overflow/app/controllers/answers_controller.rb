@@ -7,7 +7,8 @@ class AnswersController < ApplicationController
                          content: params[:answer][:content],
                          question_id: @question.id)
 
-    redirect_to question_path(@question) #@question works tor
+    # redirect_to question_path(@question)
+    render json: @answer
   end
 
   def edit
