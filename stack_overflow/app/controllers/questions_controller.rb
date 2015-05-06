@@ -42,4 +42,11 @@ class QuestionsController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+
+  end
+
+  def downvote
+  end
+
 end

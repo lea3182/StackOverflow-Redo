@@ -1,7 +1,9 @@
 <h2>Questions:</h2>
 <% @questions.each do |question| %>
   <ul>
-    <li><a href="/questions/<%= question.id %>"><%= question.title %></a> </li>
+    <li><a href="/questions/<%= question.id %>"><%= question.title %></a><p><%=  %>
+    <%= button_to 'Upvote', upvote_question_path(question.id), method: :put %>
+    <%= button_to 'Downvote', downvote_question_path(question.id), method: :put %> </li>
   </ul>
 <% end %>
 

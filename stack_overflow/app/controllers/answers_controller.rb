@@ -7,13 +7,7 @@ class AnswersController < ApplicationController
                          content: params[:answer][:content],
                          question_id: @question.id)
 
-    # if @answer.save
-      redirect_to question_path(@question) #@question works tor
-    # else
-    #   redirect_to answers_path
-    # end
-  end
-  def show
+    redirect_to question_path(@question) #@question works tor
   end
 
   def edit
@@ -37,4 +31,5 @@ class AnswersController < ApplicationController
 
     redirect_to @question
   end
+
 end
