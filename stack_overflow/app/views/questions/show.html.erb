@@ -6,15 +6,15 @@
 <%= button_to 'Edit', edit_question_path(@question), method: :get %></p>
 </div>
 
-<div>
+<div class >
   <% @answers.each do |answer| %>
     <p>Title: <%= answer.title %></p>
     <p>Content: <%= answer.content %></p>
     <p>Votes: <%= answer.votes %></p>
-    <p><%= button_to 'Upvote', upvote_question_answer_path(@question,answer.id), method: :put %></p>
-    <p><%= button_to 'Downvote', downvote_question_answer_path(@question, answer.id), method: :put %></p>
-    <p><%= button_to 'Delete', question_answer_path(@question, answer.id), method: :delete %></p>
-   <p><%= button_to 'Edit', edit_question_answer_path(@question, answer.id), method: :get %></p>
+    <p><%= button_to 'Upvote', upvote_question_answer_path(@question,answer.id), method: :put %>
+    <%= button_to 'Downvote', downvote_question_answer_path(@question, answer.id), method: :put %></p>
+    <p><%= button_to 'Delete', question_answer_path(@question, answer.id), method: :delete %>
+   <%= button_to 'Edit', edit_question_answer_path(@question, answer.id), method: :get %></p>
   <% end %>
 </div><br>
 

@@ -10,13 +10,14 @@ class QuestionsController < ApplicationController
                              content: params[:question][:content])
 
     if @question.save
-      redirect_to root_path
+      # redirect_to root_path
+      render json: {question: @question}
     end
   end
 
   def show
     @question = Question.find(params[:id])
-    @answers = Answer.where(question_id: params[:id])
+    @answers = Answer.where(question_id: params[:id]).sort
     @answer = Answer.new
   end
 
