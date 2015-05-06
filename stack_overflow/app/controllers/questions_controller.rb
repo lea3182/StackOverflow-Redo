@@ -5,9 +5,6 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
-  def new
-  end
-
   def create
     @question = Question.new(title: params[:question][:title],
                              content: params[:question][:content])
@@ -15,7 +12,6 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to root_path
     end
-
   end
 
   def show
@@ -25,9 +21,18 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
   end
 
   def update
+    @question = Question.find(params[:id])
+    if @question.update(title: params[:question][:title],
+                     content: params[:question][:content])
+
+      redirect_to question_path(@question)
+    else
+      redirect_to edit_question_path
+    end
   end
 
   def destroy
