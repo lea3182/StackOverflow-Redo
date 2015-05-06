@@ -43,10 +43,17 @@ class QuestionsController < ApplicationController
   end
 
   def upvote
+    @question = Question.find(params[:id])
+    @question.upvotes
 
+    redirect_to root_path
   end
 
   def downvote
+    @question = Question.find(params[:id])
+    @question.downvotes
+
+    redirect_to root_path
   end
 
 end
