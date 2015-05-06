@@ -6,7 +6,7 @@ class Answer < ActiveRecord::Base
     self.save
   end
 
-  def upvotes
+  def downvotes
     self.votes -= 1
     self.save
   end
